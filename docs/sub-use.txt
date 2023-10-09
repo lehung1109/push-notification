@@ -1,0 +1,2 @@
+- Bước đầu tiên để lấy được phép để gửi thông điệp tới họ và chúng ta có thể lấy được trên tay 1 PushSubscription
+- 
