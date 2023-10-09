@@ -6,15 +6,26 @@
   "directories": {
     "doc": "docs"
   },
+  "types": "types.d.ts",
   "scripts": {
+    "start": "npm run dev",
+    "build": "vite build",
+    "preview": "vite preview --port 8888",
+    "dev": "concurrently --kill-others \"vite build --watch\" \"npm run preview\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/react-dom": "^18.2.11",
+    "concurrently": "^8.2.1",
     "vite": "^4.4.11"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
