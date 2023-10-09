@@ -42,7 +42,11 @@ const App = () => {
     });
   };
 
-  return permission === 'denied' ? "You're denied so you need to enable it manual" : <button ref={ref} onClick={handleClick}>Allow Notification</button>;
+  const handlePushNotification = () => {
+
+  };
+
+  return permission === 'denied' ? "You're denied so you need to enable it manual" : permission === 'granted' ? <><p>Thanks for allow notification</p><button onClick={handlePushNotification}>Push a test notification</button></> : <button ref={ref} onClick={handleClick}>Allow Notification</button>;
 };
 
 export default App;
