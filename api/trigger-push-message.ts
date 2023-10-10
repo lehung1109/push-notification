@@ -1,9 +1,5 @@
 import type { RequestContext } from '@vercel/edge';
 import webPush from 'web-push';
-
-export const config = {
-  matcher: '/trigger-push-message',
-};
  
 const vapidKeys = {
   publicKey: `${process.env.VITE_PUBLIC_KEY}`,
@@ -16,7 +12,7 @@ webPush.setVapidDetails(
   vapidKeys.privateKey,
 );
  
-export default function middleware(request: Request, context: RequestContext) {
+export default async function handler(request: Request, context: RequestContext) {
  
   return Response.json(
     { hello: 'world' },
