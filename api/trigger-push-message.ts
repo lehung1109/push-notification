@@ -17,7 +17,7 @@ webPush.setVapidDetails(
   vapidKeys.privateKey,
 );
  
-export default async function handler(request: Request, context: RequestContext) {
+export default function handler(request: Request, context: RequestContext) {
   if(request.method.toLocaleLowerCase() !== 'post') {
     return Response.json({
       error: "Not support this method"
@@ -28,11 +28,11 @@ export default async function handler(request: Request, context: RequestContext)
     });
   }
 
-  const data = await request.json();
+  // const data = await request.json();
  
   return Response.json(
     {
-      dataSent: data,
+      // dataSent: data,
       vapidKeys
     },
     {
