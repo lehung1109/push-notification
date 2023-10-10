@@ -1,5 +1,5 @@
 import type { RequestContext } from '@vercel/edge';
-import webPush from 'web-push';
+// import webPush from 'web-push';
 
 export const config = {
   matcher: '/trigger-push-message',
@@ -10,11 +10,11 @@ const vapidKeys = {
   privateKey: `${import.meta.env.VITE_PRIVATE_KEY}`,
 };
 
-webPush.setVapidDetails(
-  'mailto:hung0895@gmail.com',
-  vapidKeys.publicKey,
-  vapidKeys.privateKey,
-);
+// webPush.setVapidDetails(
+//   'mailto:hung0895@gmail.com',
+//   vapidKeys.publicKey,
+//   vapidKeys.privateKey,
+// );
  
 export default function middleware(request: Request, context: RequestContext) {
  
