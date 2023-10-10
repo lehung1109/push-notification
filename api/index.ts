@@ -32,7 +32,11 @@ app.get('/api/get-vapid-keys', (req, res) => {
   );
 });
 
-app.post('/api/trigger-push-message', (req, res) => {
+app.post('/api/trigger-push-message', async (req, res) => {
+  const { payload, pushSubscription } = req.body;
+
+  await webPush.sendNotification(pushSubscription, payload);
+
   return res.status(200).json(
     {
       dataSent: req.body,
