@@ -6,6 +6,9 @@ dotenv.config();
 
 const app = express();
 
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 const vapidKeys = {
   publicKey: `${process.env.VITE_PUBLIC_KEY}`,
   privateKey: `${process.env.VITE_PRIVATE_KEY}`,
