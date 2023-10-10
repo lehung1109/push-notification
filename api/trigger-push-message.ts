@@ -17,22 +17,22 @@ webPush.setVapidDetails(
   vapidKeys.privateKey,
 );
  
-export default function handler(request: Request, context: RequestContext) {
-  if(request.method.toLocaleLowerCase() !== 'post') {
-    return Response.json({
-      error: "Not support this method"
-    }, 
-    {
-      status: 405,
-      headers: { 'content-type': 'application/json' },
-    });
-  }
+export default async function handler(request: Request, context: RequestContext) {
+  // if(request.method.toLocaleLowerCase() !== 'post') {
+  //   return Response.json({
+  //     error: "Not support this method"
+  //   }, 
+  //   {
+  //     status: 405,
+  //     headers: { 'content-type': 'application/json' },
+  //   });
+  // }
 
-  // const data = await request.json();
+  const data = await request.json();
  
   return Response.json(
     {
-      // dataSent: data,
+      dataSent: data,
       vapidKeys
     },
     {
