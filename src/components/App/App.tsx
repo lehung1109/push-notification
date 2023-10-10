@@ -46,7 +46,22 @@ const App = () => {
 
   };
 
-  return permission === 'denied' ? "You're denied so you need to enable it manual" : permission === 'granted' ? <><p>Thanks for allow notification</p><button onClick={handlePushNotification}>Push a test notification</button></> : <button ref={ref} onClick={handleClick}>Allow Notification</button>;
+  const showLocalNotification = () => {
+    registration?.then((object: ServiceWorkerRegistration | void) => {
+      if(!object) {
+        return;
+      }
+
+      object.showNotification("Simple Notification", {
+        body: "Buzz! Buzz!",
+        icon: "https://cdn4.iconfinder.com/data/icons/materia-social-free/24/038_027_share_code_link_html_android_material-512.png",
+        vibrate: [200, 100, 200, 100, 200, 100, 200],
+        tag: "simple-notification",
+      })
+    });
+  };
+
+  return permission === 'denied' ? "You're denied so you need to enable it manual" : permission === 'granted' ? <><p>Thanks for allow notification</p><button onClick={handlePushNotification}>Push a test notification from server</button> <button onClick={showLocalNotification}>show a test notification from local</button></> : <button ref={ref} onClick={handleClick}>Allow Notification</button>;
 };
 
 export default App;

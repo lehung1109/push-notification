@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/dist",
+      "statusCode": 301
+    }
+  ]
+}
