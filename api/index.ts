@@ -21,4 +21,4 @@ app.get('/api/trigger-push-message', async (req, res) => {
   );
 });
 
-module.exports = app;
+export default app;
