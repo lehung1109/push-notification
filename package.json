@@ -6,6 +6,7 @@
   "directories": {
     "doc": "docs"
   },
+  "type": "module",
   "types": "types.d.ts",
   "scripts": {
     "start": "npm run dev",
