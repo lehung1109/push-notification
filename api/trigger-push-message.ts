@@ -1,5 +1,9 @@
 import type { RequestContext } from '@vercel/edge';
 import webPush from 'web-push';
+
+export const config = {
+  runtime: 'edge',
+};
  
 // const vapidKeys = {
 //   publicKey: `${process.env.VITE_PUBLIC_KEY}`,
@@ -13,12 +17,7 @@ import webPush from 'web-push';
 // );
  
 export default function handler(request: Request, context: RequestContext) {
- 
-  return Response.json(
-    { hello: 'world' },
-    {
-      status: 200,
-      headers: { 'content-type': 'application/json' },
-    },
-  );
+  return Response.json({
+    name: `Hello, from ${request.url} I'm an Edge Function!`,
+  });
 }
