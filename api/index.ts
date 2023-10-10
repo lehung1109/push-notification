@@ -41,6 +41,7 @@ app.post('/api/trigger-push-message', async (req, res) => {
   return res.status(200).json(
     {
       dataSent: req.body,
+      test: 'test',
       vapidKeys
     }
   );
