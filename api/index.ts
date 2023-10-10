@@ -30,6 +30,14 @@ app.get('/api/get-vapid-keys', async (req, res) => {
 });
 
 app.get('/api/trigger-push-message', async (req, res) => {
+  if(req.method.toLowerCase() !== 'post') {
+    res.status(205).json({
+      error: "Only support POST method"
+    });
+
+    return;
+  }
+
   return res.status(200).json(
     {
       dataSent: req.body,
