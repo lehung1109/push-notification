@@ -11,11 +11,11 @@ const vapidKeys = {
   privateKey: `${process.env.VITE_PRIVATE_KEY}`,
 };
 
-webPush.setVapidDetails(
-  'mailto:hung0895@gmail.com',
-  vapidKeys.publicKey,
-  vapidKeys.privateKey,
-);
+// webPush.setVapidDetails(
+//   'mailto:hung0895@gmail.com',
+//   vapidKeys.publicKey,
+//   vapidKeys.privateKey,
+// );
  
 export default async function handler(request: Request, context: RequestContext) {
   // if(request.method.toLocaleLowerCase() !== 'post') {
