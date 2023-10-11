@@ -45,7 +45,7 @@ const App = () => {
   const handlePushNotification = () => {
     const pushSubscription = localStorage.getItem('pushSubscription');
 
-    fetch('http://localhost:8999/api/trigger-push-message', {
+    fetch(`${import.meta.env.VITE_API_URL}/trigger-push-message`, {
       method: 'POST',
       headers: {
         'Content-Type': "application/json"
