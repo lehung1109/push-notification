@@ -13,7 +13,7 @@ function registerSW() {
 
   const registration = navigator
     .serviceWorker
-    .register('/sw.js')
+    .register(`${import.meta.env.VITE_BASE_URL}sw.js`)
     .then((registration) => {
       console.log('sw successfully registered');
 
