@@ -43,7 +43,21 @@ const App = () => {
   };
 
   const handlePushNotification = () => {
+    const pushSubscription = localStorage.getItem('pushSubscription');
 
+    fetch('http://localhost:8999/api/trigger-push-message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify({
+        pushSubscription: pushSubscription && JSON.parse(pushSubscription),
+        payload: {
+          title: 'This is a push from a server',
+          body: 'test body content'
+        }
+      })
+    }).catch(console.log);
   };
 
   const showLocalNotification = () => {
