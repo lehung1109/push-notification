@@ -1,0 +1,1 @@
+self.addEventListener("install",()=>{self.skipWaiting()});self.addEventListener("push",t=>{var i,s;console.log(`dataReceived: ${JSON.stringify((i=t.data)==null?void 0:i.json())}`);const{title:e,body:n}=((s=t.data)==null?void 0:s.json())||{};t.waitUntil(Promise.resolve().then(()=>self.registration.showNotification(e,{body:n})))});
